@@ -26,7 +26,7 @@ li {
 
 /* header -------------------- */
 header {
-  background: rgb(255, 245, 200);
+  background: rgb(255, 255, 255);
   position: relative;
   height: 80px;
   z-index: 100;
@@ -72,7 +72,27 @@ header .lnb {
   text-align: center;
   position: relative;
   height: 80px;
+  transition: all .2s;
 }
+
+.lnb > ul > li .ko {
+  font-size: 16px;
+  transition: all .2s;
+}
+
+.lnb > ul > li .en{
+  display: none;
+  font-size: 16px;
+  transition: all .2s;
+}
+
+.lnb > ul > li:hover .ko {
+  display: none;
+}
+.lnb > ul > li:hover .en {
+  display: block;
+}
+
 
 .lnb > ul > li:after {
   content: '';
@@ -108,6 +128,7 @@ header .lnb {
   width: 200px;
   height: 200px;
   cursor: pointer;
+  transition: all ease-out;
 }
 
 .lnb > ul > li:nth-child(2) .submenu {
@@ -184,7 +205,12 @@ header .lnb {
 
 
 .lnb > ul > li .submenu li a {
-  color: transparent;
+  color: #fff;
+  display: block;
+  height: 30px;
+  width: 100%;
+  background: gray;
+  line-height: 30px;
 }
 
 
@@ -201,10 +227,10 @@ header .color_bg {
   width: 100%;
   height: 0;
   display: block;
-  background: rgba(214, 214, 214, 0.685);
+  background: rgba(214, 214, 214, 0.829);
   z-index: -1;
   opacity: 0;  
-  transition: all .4s;
+  transition: all .3s;
 }
 
 .lnb:hover + .color_bg{
@@ -233,10 +259,8 @@ header .customer a:last-child{
 }
 
 #visual .img {
-  background: url('../img/visual.jpg') no-repeat center 60%;
-  /* background-position: 10%; */
+  background: url('../img/visual.png') no-repeat center 60%;
   height: 400px;
- 
 }
 
 #visual .description {
@@ -250,14 +274,137 @@ header .customer a:last-child{
   font-size: 34px;
   font-family: 'Style Script', cursive;
 }
+
 #visual .description span {
   margin-bottom: 30px;
   display: block;
 }
+
 #visual .description p {
   font-size: 14px;
+}
+
+/* best_item -------------------- */
+#best_item {
+  padding: 50px 0;
+}
+
+#best_item h2 {
+  text-align: center;
+}
+
+.items {
+  display: flex;
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
 
 }
+
+.items li {
+  max-width: 250px;
+  height: 350px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+}
+
+.items li:first-child:after {
+  content: '';
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/best1.png) no-repeat center;
+}
+
+.items li:nth-child(2):after{
+  content: '';
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/best2.png) no-repeat center;
+}
+
+.items li:nth-child(3):after{
+  content: '';
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/best3.png) no-repeat center;
+}
+
+.items li:nth-child(4):after{
+  content: '';
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/best4.png) no-repeat center;
+}
+
+.items .best_desc {
+ position: relative;
+ top: 35%;
+ z-index: 100;
+ height: 100%;
+}
+
+.items .best_desc span {
+  width: 50px;
+  height: 50px;
+  background: goldenrod;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.items .best_desc h3 {
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.items .best_desc p{
+  width: 200px;
+}
+
+.items li button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  height: 60px;
+  bottom: 0;
+  background-color:transparent;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.items li button:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -200%;
+  width: 300px;
+  height: 1px;
+  background: gray;
+}
+
+.items li button .fas{
+  margin-left: 5px;
+  font-size: 16px;
+}
+
 
 /* magazine -------------------- */
 .magazine_container {
