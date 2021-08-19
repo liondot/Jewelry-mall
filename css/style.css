@@ -1,0 +1,265 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.inner {
+  max-width: 1200px;
+  /* overflow: hidden; */
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+} 
+
+li {
+  list-style: none;
+}
+
+
+/* header -------------------- */
+header {
+  background: rgb(255, 245, 200);
+  position: relative;
+  height: 80px;
+  z-index: 100;
+}
+
+header .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  height: inherit;
+}
+
+header .lnb {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex: 3;
+  position: relative;
+  z-index: 100;
+}
+
+.lnb > ul {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lnb > ul > li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  height: 80px;
+}
+
+.lnb > ul > li:after {
+  content: '';
+  width: 0;
+  height: 1px; 
+  background: rgb(31, 31, 31);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0 10px;
+  transition: .5s;
+}
+
+.lnb > ul > li:hover:after {
+  width: 90%;
+}
+.lnb > ul > li:hover .submenu {
+  visibility: visible;
+}
+
+.lnb > ul > li .submenu{
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+}
+
+.lnb > ul > li .submenu li{
+  position: relative;
+  display: block;
+  line-height: 50px;
+  height: 50px;
+  width: 100%;
+}
+
+.lnb > ul > li .submenu li:after{
+  content: '';
+  width: 250px;
+  height: 250px;
+  position: absolute;
+}
+
+.lnb > ul > li .submenu li:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  background: rgb(241, 98, 127);
+  width: 0;
+  height: 1px;
+  transform: translateX(-50%);
+  transition: .2s;
+}
+
+.lnb > ul > li .submenu li:hover:after {
+  width: 50%;
+}
+
+
+.lnb > ul > li:hover > .color_bg {
+  /* visibility: visible; */
+  opacity: 1;
+}
+
+header .color_bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 0;
+  display: block;
+  background: rgba(214, 214, 214, 0.685);
+  z-index: -1;
+  opacity: 0;  
+  transition: all .4s;
+}
+
+.lnb:hover + .color_bg{
+  opacity: 1; 
+  height: 300px; 
+}
+
+header .customer {
+  display: flex;
+  flex: 1;
+  height: inherit;
+  justify-content: flex-end;
+  align-items: center;
+
+}
+
+header .customer a:last-child{
+  margin-left: 40px;
+}
+
+
+
+
+/* visual -------------------- */
+
+#visual {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  z-index: -1;
+}
+
+#visual .visual_img {
+  width: 100%;
+  height: inherit;
+  background: url('../img/visual.jpg') no-repeat center;
+}
+
+#visual .inner {
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#visual .description {
+  text-align: center;
+  margin-top: 150px;
+}
+#visual .description h2 {
+  font-size: 38px;
+}
+
+#visual .description p {
+  width: 400px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+
+/* magazine -------------------- */
+.magazine_container {
+  display: flex;
+  align-items: center;
+  padding: 50px 0;
+}
+ 
+.magazine_container .left {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 500px;
+
+}
+
+.magazine_container .left .left_left {
+  height: 50%;
+  background: url('../img/magazine1.jpg') no-repeat center center;
+  background-position: cover;
+}
+
+.magazine_container .left .left_right {
+  height: 50%;
+  background: url('../img/magazine2.jpg') no-repeat center center;
+  background-position: cover;
+}
+.magazine_container .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 500px;
+  background: url('../img/magazine3.jpg') no-repeat center center;
+  background-position: cover;
+}
+
+.magazine_container .right .right_list {
+  width: 400px;
+  height: 300px;
+  background: #fff;
+  opacity: .5;
+}
+.magazine_container .right .right_list li a{
+  font-size: 20px;
+  color: blue;
+  border-bottom: 3px solid green;
+}
+
+@media screen and (max-width:360px) {
+ body {
+   background: orange;
+ }
+
+ .magazine_container {
+   display: unset;
+ }
+
+}
