@@ -1,6 +1,11 @@
+/* font  */
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&family=Style+Script&display=swap');
+
 body {
   padding: 0;
   margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .inner {
@@ -56,6 +61,7 @@ header .lnb {
   height: 80px;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .lnb > ul > li {
@@ -89,42 +95,98 @@ header .lnb {
 
 .lnb > ul > li .submenu{
   visibility: hidden;
-  position: absolute;
-  width: 100%;
+  position: absolute; 
+  display: flex;
   top: 100%;
   left: 0;
 }
 
+
 .lnb > ul > li .submenu li{
-  position: relative;
-  display: block;
-  line-height: 50px;
-  height: 50px;
-  width: 100%;
+  background: green;
+  margin: 10px 10px;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
 }
 
-.lnb > ul > li .submenu li:after{
-  content: '';
-  width: 250px;
-  height: 250px;
-  position: absolute;
+.lnb > ul > li:nth-child(2) .submenu {
+  left: -100%;
+}
+.lnb > ul > li:nth-child(3) .submenu {
+  left: -100%;
+}
+.lnb > ul > li:nth-child(4) .submenu {
+  left: -200%;
+}
+.lnb > ul > li:nth-child(5) .submenu {
+  left: -400%;
 }
 
-.lnb > ul > li .submenu li:after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 100%;
-  background: rgb(241, 98, 127);
-  width: 0;
-  height: 1px;
-  transform: translateX(-50%);
-  transition: .2s;
+/* 목걸이 */
+.lnb > ul > li:nth-child(1) .submenu li:first-child{
+  background: url('../img/j1.png')no-repeat;
+  background-position: center;
 }
 
-.lnb > ul > li .submenu li:hover:after {
-  width: 50%;
+.lnb > ul > li:nth-child(1) .submenu li:nth-child(2){
+  background: url('../img/j2.png')no-repeat;
+  background-position: center;
 }
+
+/* 반지 */
+.lnb > ul > li:nth-child(2) .submenu li:first-child{
+  background: url('../img/ring1.png')no-repeat;
+  background-position: center;
+}
+.lnb > ul > li:nth-child(2) .submenu li:nth-child(2){
+  background: url('../img/ring2.png')no-repeat;
+  background-position: center;
+}
+.lnb > ul > li:nth-child(2) .submenu li:nth-child(3){
+  background: url('../img/ring3.png')no-repeat;
+  background-position: center;
+}
+
+/* 팔찌 */
+.lnb > ul > li:nth-child(3) .submenu li:first-child{
+  background: url('../img/bra1.png')no-repeat;
+  background-position: center;
+}
+.lnb > ul > li:nth-child(3) .submenu li:nth-child(2){
+  background: url('../img/bra2.png')no-repeat;
+  background-position: center;
+}
+
+/* 귀걸이 */
+.lnb > ul > li:nth-child(4) .submenu li:first-child{
+  background: url('../img/earring1.png')no-repeat;
+  background-position: center;
+}
+.lnb > ul > li:nth-child(4) .submenu li:nth-child(2){
+  background: url('../img/earring2.png')no-repeat;
+  background-position: center;
+}
+
+/* 헤어핀 */
+.lnb > ul > li:nth-child(5) .submenu li:first-child{
+  background: url('../img/hair1.png')no-repeat;
+  background-position: center;
+}
+.lnb > ul > li:nth-child(5) .submenu li:nth-child(2){
+  background: url('../img/hair2.png')no-repeat;
+  background-position: center;
+}
+.lnb > ul > li:nth-child(5) .submenu li:nth-child(3){
+  background: url('../img/hair3.png')no-repeat;
+  background-position: center;
+}
+
+
+.lnb > ul > li .submenu li a {
+  color: transparent;
+}
+
 
 
 .lnb > ul > li:hover > .color_bg {
@@ -156,7 +218,6 @@ header .customer {
   height: inherit;
   justify-content: flex-end;
   align-items: center;
-
 }
 
 header .customer a:last-child{
@@ -167,43 +228,36 @@ header .customer a:last-child{
 
 
 /* visual -------------------- */
-
 #visual {
-  width: 100%;
-  height: 600px;
   position: relative;
-  z-index: -1;
 }
 
-#visual .visual_img {
-  width: 100%;
-  height: inherit;
-  background: url('../img/visual.jpg') no-repeat center;
-}
-
-#visual .inner {
-  height: inherit;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+#visual .img {
+  background: url('../img/visual.jpg') no-repeat center 60%;
+  /* background-position: 10%; */
+  height: 400px;
+ 
 }
 
 #visual .description {
-  text-align: center;
-  margin-top: 150px;
-}
-#visual .description h2 {
-  font-size: 38px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 350px;
 }
 
+#visual .description h3 {
+  font-size: 34px;
+  font-family: 'Style Script', cursive;
+}
+#visual .description span {
+  margin-bottom: 30px;
+  display: block;
+}
 #visual .description p {
-  width: 400px;
-  text-align: center;
-  margin: 0 auto;
-  font-size: 16px;
-}
+  font-size: 14px;
 
+}
 
 /* magazine -------------------- */
 .magazine_container {
