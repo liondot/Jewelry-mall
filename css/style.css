@@ -8,10 +8,22 @@ body {
   font-family: 'Noto Sans KR', sans-serif;
 }
 
+section {
+  border: 2px solid purple;
+}
+
 .inner {
   max-width: 1200px;
-  /* overflow: hidden; */
+  margin: 50px auto;
+}
+
+#visual .inner {
   margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
 }
 
 a {
@@ -72,27 +84,24 @@ header .lnb {
   text-align: center;
   position: relative;
   height: 80px;
-  transition: all .2s;
 }
 
 .lnb > ul > li .ko {
   font-size: 16px;
-  transition: all .2s;
 }
 
 .lnb > ul > li .en{
   display: none;
   font-size: 16px;
-  transition: all .2s;
 }
 
 .lnb > ul > li:hover .ko {
   display: none;
 }
+
 .lnb > ul > li:hover .en {
   display: block;
 }
-
 
 .lnb > ul > li:after {
   content: '';
@@ -109,8 +118,12 @@ header .lnb {
 .lnb > ul > li:hover:after {
   width: 90%;
 }
+
 .lnb > ul > li:hover .submenu {
   visibility: visible;
+  width: 1200px;
+  position: absolute;
+  left: 0;
 }
 
 .lnb > ul > li .submenu{
@@ -120,7 +133,6 @@ header .lnb {
   top: 100%;
   left: 0;
 }
-
 
 .lnb > ul > li .submenu li{
   background: green;
@@ -134,12 +146,15 @@ header .lnb {
 .lnb > ul > li:nth-child(2) .submenu {
   left: -100%;
 }
+
 .lnb > ul > li:nth-child(3) .submenu {
   left: -100%;
 }
+
 .lnb > ul > li:nth-child(4) .submenu {
   left: -200%;
 }
+
 .lnb > ul > li:nth-child(5) .submenu {
   left: -400%;
 }
@@ -160,10 +175,12 @@ header .lnb {
   background: url('../img/ring1.png')no-repeat;
   background-position: center;
 }
+
 .lnb > ul > li:nth-child(2) .submenu li:nth-child(2){
   background: url('../img/ring2.png')no-repeat;
   background-position: center;
 }
+
 .lnb > ul > li:nth-child(2) .submenu li:nth-child(3){
   background: url('../img/ring3.png')no-repeat;
   background-position: center;
@@ -174,6 +191,7 @@ header .lnb {
   background: url('../img/bra1.png')no-repeat;
   background-position: center;
 }
+
 .lnb > ul > li:nth-child(3) .submenu li:nth-child(2){
   background: url('../img/bra2.png')no-repeat;
   background-position: center;
@@ -184,6 +202,7 @@ header .lnb {
   background: url('../img/earring1.png')no-repeat;
   background-position: center;
 }
+
 .lnb > ul > li:nth-child(4) .submenu li:nth-child(2){
   background: url('../img/earring2.png')no-repeat;
   background-position: center;
@@ -194,15 +213,16 @@ header .lnb {
   background: url('../img/hair1.png')no-repeat;
   background-position: center;
 }
+
 .lnb > ul > li:nth-child(5) .submenu li:nth-child(2){
   background: url('../img/hair2.png')no-repeat;
   background-position: center;
 }
+
 .lnb > ul > li:nth-child(5) .submenu li:nth-child(3){
   background: url('../img/hair3.png')no-repeat;
   background-position: center;
 }
-
 
 .lnb > ul > li .submenu li a {
   color: #fff;
@@ -213,10 +233,7 @@ header .lnb {
   line-height: 30px;
 }
 
-
-
 .lnb > ul > li:hover > .color_bg {
-  /* visibility: visible; */
   opacity: 1;
 }
 
@@ -233,7 +250,7 @@ header .color_bg {
   transition: all .3s;
 }
 
-.lnb:hover + .color_bg{
+.lnb:hover + .color_bg {
   opacity: 1; 
   height: 300px; 
 }
@@ -249,7 +266,6 @@ header .customer {
 header .customer a:last-child{
   margin-left: 40px;
 }
-
 
 
 
@@ -284,21 +300,15 @@ header .customer a:last-child{
   font-size: 14px;
 }
 
-/* best_item -------------------- */
-#best_item {
-  padding: 50px 0;
-}
 
-#best_item h2 {
-  text-align: center;
-}
+/* best_item -------------------- */
+
 
 .items {
   display: flex;
   padding-top: 50px;
   display: flex;
   justify-content: space-between;
-
 }
 
 .items li {
@@ -310,67 +320,70 @@ header .customer a:last-child{
   cursor: pointer;
   position: relative;
   overflow: hidden;
-
 }
 
-.items li:first-child:after {
-  content: '';
+.items li a .img {
   width: 100%;
   height: 150px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: url(../img/best1.png) no-repeat center;
+  overflow:hidden;
+  transform: scale(1);
 }
 
-.items li:nth-child(2):after{
-  content: '';
-  width: 100%;
-  height: 150px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: url(../img/best2.png) no-repeat center;
+.items li a .img img {
+  transition: all .3s ease-in;
 }
 
-.items li:nth-child(3):after{
-  content: '';
-  width: 100%;
-  height: 150px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: url(../img/best3.png) no-repeat center;
+.items li:hover a .img img {
+  transform: scale(1.1);
 }
 
-.items li:nth-child(4):after{
-  content: '';
-  width: 100%;
-  height: 150px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: url(../img/best4.png) no-repeat center;
-}
 
 .items .best_desc {
  position: relative;
- top: 35%;
+ top: 0;
  z-index: 100;
+ width: 300px;
  height: 100%;
+}
+
+.items .best_desc:before {
+  content: '';
+}
+
+.items .best_desc:after {
+  position: absolute;
+  z-index: -10;
+  top: 0; 
+  left: 0;
+  content: '';
+  width: 300px;
+  height: inherit;
+  background:url(../img/sales_obj01.png) no-repeat -351px -155px, 
+  url(../img/sales_obj02.png) no-repeat -418px 64px, 
+  url(../img/sales_obj03.png) no-repeat 279px 96px;
+  transition: all .5s;
+}
+
+.items li:hover .best_desc:after {
+	background-position: -125px -155px, -326px 64px, 128px 96px;
 }
 
 .items .best_desc span {
   width: 50px;
   height: 50px;
-  background: goldenrod;
+  background: rgb(255, 211, 99);
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: -10%;
+  z-index:400;
+  overflow: visible;
+  font-weight: bold;  
 }
 
 .items .best_desc h3 {
-  margin: 20px 0;
+  padding: 30px 0 20px;
   font-size: 16px;
 }
 
@@ -388,6 +401,7 @@ header .customer a:last-child{
   background-color:transparent;
   font-size: 16px;
   cursor: pointer;
+  z-index: 200;
 }
 
 .items li button:after {
@@ -403,7 +417,18 @@ header .customer a:last-child{
 .items li button .fas{
   margin-left: 5px;
   font-size: 16px;
+  transition: all .5s;
 }
+
+.items li:hover button .fas {
+  padding-left: 5px;
+  color: rgb(24, 24, 24);
+}
+
+.items li:hover button{
+  color: rgb(24, 24, 24); 
+}
+
 
 
 /* magazine -------------------- */
