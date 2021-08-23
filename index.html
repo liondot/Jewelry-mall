@@ -8,11 +8,17 @@
   <!-- css link -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/default.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css"
+/>
   <!-- fontawosome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
   <!-- js & jquery -->
   <script src="js/main.js" defer></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  
 </head>
 <body>
   <a href="#content" class="skip">본문바로가기</a>
@@ -20,7 +26,7 @@
   <header class="index">
     <div class="inner">
       <div class="logo">
-        <a href="#none">logo</a>
+        <a href="#none">LOGO</a>
       </div>
       <div class="lnb">
           <ul>
@@ -69,6 +75,11 @@
         <a href="#none">login</a>
       </div>
     </div>
+    <div class="toggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </header>
   <!-- header  -->
   <section id="visual">
@@ -114,7 +125,8 @@
           <button>더보기
             <i class="fas fa-long-arrow-alt-right"></i>
           </button>
-        </a></li>
+        </a>
+      </li>
         <li>
           <a href="#none">
             <div class="img">
@@ -128,7 +140,8 @@
           <button>더보기
             <i class="fas fa-long-arrow-alt-right"></i>
           </button>
-        </a></li>
+        </a>
+      </li>
         <li>
           <a href="#none">
             <div class="img">
@@ -142,12 +155,13 @@
           <button>더보기
             <i class="fas fa-long-arrow-alt-right"></i>
           </button>
-        </a></li>
+        </a>
+      </li>
       </ul>
     </div>
   </section>
   <!-- best_item  -->
-  <section id="new">
+  <section id="new" class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
     <div class="inner">
       <h2>NEW ITEM</h2>
       <p>Lorem ipsum adipisicing elit.</p>
@@ -350,35 +364,65 @@
     </div>
   </section>
   <!-- new_items  -->
-  <section id="social">
+  <section id="social" class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
     <div class="inner">
-      <h2>SOCIAL</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>      <ul>
-        <li>
-          <a href="#none">
-            <img src="img/sns1.png" alt="">
-          </a>
-        </li>
-        <li>
-          <a href="#none">
-            <img src="img/sns2.png" alt="">
-          </a>
-        </li>
-        <li>
-          <a href="#none">
-            <img src="img/sns3.png" alt="">
-          </a>
-        </li>
-        <li>
-          <a href="#none">
-            <img src="img/sns4.png" alt="">
-          </a>
-        </li>
-      </ul>
+        <h2>SOCIAL</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+        <div class="swiper-container mySwiper">
+          <!-- <ul class="swiper-wrapper">
+            <li class="swiper-slide">
+              <a href="#none">
+                <img src="img/sns1.png" alt="">
+              </a>
+            </li>
+            <li class="swiper-slide">
+              <a href="#none">
+                <img src="img/sns2.png" alt="">
+              </a>
+            </li>
+            <li class="swiper-slide">
+              <a href="#none">
+                <img src="img/sns3.png" alt="">
+              </a>
+            </li>
+            <li class="swiper-slide">
+              <a href="#none">
+                <img src="img/sns4.png" alt="">
+              </a>
+            </li>
+            <li class="swiper-slide">
+              <a href="#none">
+                <img src="img/sns4.png" alt="">
+              </a>
+            </li>
+            <li class="swiper-slide">
+              <a href="#none">
+                <img src="img/sns4.png" alt="">
+              </a>
+            </li>
+            <li class="swiper-slide">
+              <a href="#none">
+                <img src="img/sns3.png" alt="">
+              </a>
+            </li>
+          </ul> -->
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/sns1.png" alt=""></div>
+            <div class="swiper-slide"><img src="img/sns2.png" alt=""></div>
+            <div class="swiper-slide"><img src="img/sns3.png" alt=""></div>
+            <div class="swiper-slide"><img src="img/sns4.png" alt=""></div>
+            <div class="swiper-slide"><img src="img/sns1.png" alt=""></div>
+            <div class="swiper-slide"><img src="img/sns2.png" alt=""></div>
+            <div class="swiper-slide"><img src="img/sns4.png" alt=""></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
     </div>
   </section>
   <!-- social  -->
-  <section id="news_event">
+  <section id="news_event"> 
     <div class="inner">
       <h2>NEWS & EVNET</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -420,9 +464,9 @@
           <li><a href="#none">고객의소리</a></li>
         </ul>
         <ul class="info">
-          <li><a href="#none">문의전화 <span>02.000.0000</span></a></li>
-          <li><a href="#none">고객센터 <span>070.0000.0000</span></a></li>
-          <li><a href="#none">평일 am 9 - pm 17 <span>토, 일, 공휴일 휴무</span></a></li>
+          <li>문의전화 <span>02.000.0000</span</li>
+          <li>고객센터 <span>070.0000.0000</span></li>
+          <li>평일 am 9 - pm 17 <span>토, 일, 공휴일 휴무</span></li>
         </ul>
       </div>
     </div>
@@ -437,19 +481,54 @@
           <li><a href="#none">사이트맵</a></li>
         </ul>
         <p>
-					동부건설(주)<span></span>사업자번호 : 201-81-45685<span></span>대표자 : 이중길<br>
-					서울시 용산구 한강대로 372 센트레빌 아스테리움 D동<span></span>02-3484-2114<span></span>Copyright © 2017 Dongbu Corporation., All rights reserved.
+				  쥬얼리(주)<span></span>사업자번호 : 201-00-00000<span></span>대표자 : 홍길동<br>
+					서울시 용산구 한강대로 372-32<span></span>02-0000-0000<span></span>Copyright © 2017 Corporation., All rights reserved.
 				</p>
       </div>
       <div class="sns_container">
         <ul>
-          <li><a href="#none"><i class="fab fa-facebook"></i></a></li>
-          <li><a href="#none"><i class="fab fa-youtube"></i></a></li>
-          <li><a href="#none"><i class="fab fa-instagram-square"></i></a></li>
-          <li><a href="#none"><i class="fas fa-blog"></i></a></li>
+          <li><a href="#none"><i class="fab fa-facebook"><span>페이스북</span></i></a></li>
+          <li><a href="#none"><i class="fab fa-youtube"></i><span>유튜브</span></a></li>
+          <li><a href="#none"><i class="fab fa-instagram-square"></i><span>인스타</span></a></li>
+          <li><a href="#none"><i class="fas fa-blog"></i><span>블로그</span></a></li>
         </ul>
       </div>
     </div>
   </footer>
+
+<script>
+  // wow  (section : new, sns)
+  wow = new WOW(
+    {
+    boxClass:     'wow',      // default
+    animateClass: 'animated', // default
+    offset:       0,          // default
+    mobile:       true,       // default
+    live:         true        // default
+  }
+  )
+  wow.init();
+
+  //swiper(section: sns) 
+  var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 4,
+      spaceBetween: 30,
+      slidesPerGroup: 4,
+      loop: true,
+      loopFillGroupWithBlank: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+</script>
+
+
+
 </body>
 </html>
