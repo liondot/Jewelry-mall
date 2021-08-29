@@ -9,10 +9,9 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/default.css">
   <link rel="stylesheet" href="css/animate.css">
-  <link rel="stylesheet" href="css/swiper-bundle.min.css"
-/>
-  <!-- fontawosome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <!-- fontawesome -->
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous"> -->
   <!-- js & jquery -->
   <script src="js/main.js" defer></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -24,47 +23,74 @@
   <a href="#content" class="skip">본문바로가기</a>
   <!-- 헤더영역  -->
   <header class="index">
+    <div class="overlay"></div>
     <div class="inner">
       <div class="logo">
         <a href="#none">LOGO</a>
       </div>
-      <div class="lnb">
+      <div class="gnb">
           <ul>
-            <li><a href="#none" class="en">Necklace</a>
-              <a href="#none" class="ko">목걸이</a>
+            <li>
+              <a href="#none" class="en title">Necklace</a>
+              <a href="#none" class="ko title">목걸이</a>
               <ul class="submenu">
-                <li><a href="#none">submenu1</a></li>
-                <li><a href="#none">submenu2</a></li>
+                <li><a href="#none">목걸이 01</a></li>
+                <li><a href="#none">목걸이 02</a></li>
+              </ul>
+              <ul class="mobile">
+                <li><a href="#none">목걸이 01</a></li>
+                <li><a href="#none">목걸이 02</a></li>
               </ul>
             </li>
-            <li><a href="#none" class="en">Ring</a>
-              <a href="#none" class="ko">반지</a>
+            <li>
+              <a href="#none" class="en title">Ring</a>
+              <a href="#none" class="ko title">반지</a>
               <ul class="submenu"> 
-                <li><a href="#none">submenu1</a></li>
-                <li><a href="#none">submenu2</a></li>
-                <li><a href="#none">submenu3</a></li>
+                <li><a href="#none">반지 1</a></li>
+                <li><a href="#none">반지 2</a></li>
+                <li><a href="#none">반지 3</a></li>
               </ul> 
+              <ul class="mobile">
+                <li><a href="#none">submenu 01</a></li>
+                <li><a href="#none">submenu 02</a></li>
+                <li><a href="#none">submenu 03</a></li>
+              </ul>
             </li>
-            <li><a href="#none" class="en">Bracelet</a>
-              <a href="#none" class="ko">팔찌</a>
+            <li>
+              <a href="#none" class="en title">Bracelet</a>
+              <a href="#none" class="ko title">팔찌</a>
              <ul class="submenu"> 
-                <li><a href="#none">submenu1</a></li>
-                <li><a href="#none">submenu1</a></li>
+                <li><a href="#none">팔찌 1</a></li>
+                <li><a href="#none">팔찌 2</a></li>
+              </ul>
+              <ul class="mobile">
+                <li><a href="#none">submenu 01</a></li>
+                <li><a href="#none">submenu 02</a></li>
               </ul>
             </li>
-            <li><a href="#none" class="en">Earing</a>
-              <a href="#none" class="ko">귀걸이</a>
+            <li>
+              <a href="#none" class="en title">Earing</a>
+              <a href="#none" class="ko title">귀걸이</a>
               <ul class="submenu">
-                <li><a href="#none">submenu1</a></li>
-                <li><a href="#none">submenu2</a></li>
+                <li><a href="#none">귀걸이 1</a></li>
+                <li><a href="#none">귀걸이 2</a></li>
+              </ul>
+              <ul class="mobile">
+                <li><a href="#none">submenu 01</a></li>
+                <li><a href="#none">submenu 02</a></li>
               </ul>
             </li>
-            <li><a href="#none" class="en">Hairpin</a>
-              <a href="#none" class="ko">헤어핀</a>
+            <li>
+              <a href="#none" class="en title">Hairpin</a>
+              <a href="#none" class="ko title">헤어핀</a>
               <ul class="submenu">
-                <li><a href="#none">submenu1</a></li>
-                <li><a href="#none">submenu2</a></li>
-                <li><a href="#none">submenu3</a></li>
+                <li><a href="#none">헤어핀 1</a></li>
+                <li><a href="#none">헤어핀 2</a></li>
+                <li><a href="#none">헤어핀 3</a></li>
+              </ul>
+              <ul class="mobile">
+                <li><a href="#none">헤어핀 01</a></li>
+                <li><a href="#none">헤어핀 02</a></li>
               </ul>
             </li>
           </ul>
@@ -525,6 +551,28 @@
         prevEl: ".swiper-button-prev",
       },
     });
+
+
+    // mobile slide 
+    $('.gnb > ul > li').click(function(){
+      $(this).children('.mobile').slideToggle()
+      $(this).children().addClass('active')
+      $(this).siblings('li').children('a').removeClass('active')
+    });
+
+
+    // .lnb accordion
+    $('.toggle').click(function(){
+      $('.gnb, .overlay, .customer').toggleClass('active')
+    })
+
+    // overlay remove 
+    $('.overlay').click(function(){
+      $('.overlay, .gnb, .customer, .gnb > ul > li').removeClass('active')
+    })
+
+
+    
 
 </script>
 
