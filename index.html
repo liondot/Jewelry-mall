@@ -9,12 +9,13 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/default.css">
   <link rel="stylesheet" href="css/animate.css">
-  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <!-- <link rel="stylesheet" href="css/swiper-bundle.min.css"> -->
   <!-- fontawesome -->
-  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
   <!-- js & jquery -->
   <script src="js/main.js" defer></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="jquery.js"></script>
   <script src="js/wow.min.js"></script>
   <script src="js/swiper-bundle.min.js"></script>
   
@@ -394,57 +395,52 @@
     <div class="inner">
         <h2>SOCIAL</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-        <div class="swiper-container mySwiper">
-          <!-- <ul class="swiper-wrapper">
-            <li class="swiper-slide">
-              <a href="#none">
-                <img src="img/sns1.png" alt="">
-              </a>
-            </li>
-            <li class="swiper-slide">
-              <a href="#none">
-                <img src="img/sns2.png" alt="">
-              </a>
-            </li>
-            <li class="swiper-slide">
-              <a href="#none">
-                <img src="img/sns3.png" alt="">
-              </a>
-            </li>
-            <li class="swiper-slide">
-              <a href="#none">
-                <img src="img/sns4.png" alt="">
-              </a>
-            </li>
-            <li class="swiper-slide">
-              <a href="#none">
-                <img src="img/sns4.png" alt="">
-              </a>
-            </li>
-            <li class="swiper-slide">
-              <a href="#none">
-                <img src="img/sns4.png" alt="">
-              </a>
-            </li>
-            <li class="swiper-slide">
-              <a href="#none">
-                <img src="img/sns3.png" alt="">
-              </a>
-            </li>
-          </ul> -->
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="img/sns1.png" alt=""></div>
-            <div class="swiper-slide"><img src="img/sns2.png" alt=""></div>
-            <div class="swiper-slide"><img src="img/sns3.png" alt=""></div>
-            <div class="swiper-slide"><img src="img/sns4.png" alt=""></div>
-            <div class="swiper-slide"><img src="img/sns1.png" alt=""></div>
-            <div class="swiper-slide"><img src="img/sns2.png" alt=""></div>
-            <div class="swiper-slide"><img src="img/sns4.png" alt=""></div>
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="img">
+                  <img src="img/sns1.png" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="img">
+                  <img src="img/sns4.png" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="img">
+                  <img src="img/sns2.png" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="img">
+                  <img src="img/sns3.png" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="img">
+                  <img src="img/sns4.png" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="img">
+                  <img src="img/sns1.png" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="img">
+                  <img src="img/sns2.png" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="img">
+                  <img src="img/sns3.png" alt="">
+                </div>
+              </div>
+              
+            </div>
+            <div class="swiper-pagination"></div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
-        </div>
     </div>
   </section>
   <!-- social  -->
@@ -523,6 +519,8 @@
   </footer>
 
 <script>
+  
+
   // wow  (section : new, sns)
   wow = new WOW(
     {
@@ -535,42 +533,49 @@
   )
   wow.init();
 
-  //swiper(section: sns) 
-  var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 4,
-      spaceBetween: 30,
-      slidesPerGroup: 4,
-      loop: true,
-      loopFillGroupWithBlank: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
+  //swiper(section: social) 
+
+    var Swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+        },
+      });
 
 
-    // mobile slide 
+    // mobile: slide 
     $('.gnb > ul > li').click(function(){
       $(this).children('.mobile').slideToggle()
       $(this).children().addClass('active')
       $(this).siblings('li').children('a').removeClass('active')
     });
 
-
-    // .lnb accordion
+    // mobile: .lnb accordion
     $('.toggle').click(function(){
       $('.gnb, .overlay, .customer').toggleClass('active')
     })
 
-    // overlay remove 
+    // mobile: overlay remove 
     $('.overlay').click(function(){
       $('.overlay, .gnb, .customer, .gnb > ul > li').removeClass('active')
     })
-
+    
 
     
 

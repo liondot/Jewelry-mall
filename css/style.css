@@ -4,7 +4,7 @@
 
 
 /* FontAwesome 4.7 CDN */
-@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+/* @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'); */
 
 
 
@@ -83,7 +83,6 @@ header .gnb {
   z-index: 100;
 }
 
-
 .gnb > ul {
   display: flex;
   width: 100%;
@@ -137,13 +136,6 @@ header .gnb {
   width: 90%;
 }
 
-.gnb > ul > li:hover .submenu {
-  visibility: visible;
-  width: 1200px;
-  position: absolute;
-  left: 0;
-}
-
 .gnb > ul > li .submenu {
   visibility: hidden;
   position: absolute; 
@@ -152,12 +144,18 @@ header .gnb {
   left: 0;
 }
 
+.gnb > ul > li:hover .submenu {
+  visibility: visible;
+  width: 1200px;
+  position: absolute;
+  left: 0;
+}
+
 .gnb > ul > li .mobile {
   display: none;
 }
 
 .gnb > ul > li .submenu li{
-  background: green;
   margin: 10px 10px;
   width: 200px;
   height: 200px;
@@ -182,67 +180,55 @@ header .gnb {
 
 /* 목걸이 */
 .gnb > ul > li:nth-child(1) .submenu li:first-child{
-  background: url('../img/j1.png')no-repeat;
-  background-position: center;
+  background: url('../img/j1.png')no-repeat center / cover;
 }
 
 .gnb > ul > li:nth-child(1) .submenu li:nth-child(2){
-  background: url('../img/j2.png')no-repeat;
-  background-position: center;
+  background: url('../img/j2.png')no-repeat center / cover;
 }
 
 /* 반지 */
 .gnb > ul > li:nth-child(2) .submenu li:first-child{
-  background: url('../img/ring1.png')no-repeat;
-  background-position: center;
+  background: url('../img/ring1.png')no-repeat center / cover;
 }
 
 .gnb > ul > li:nth-child(2) .submenu li:nth-child(2){
-  background: url('../img/ring2.png')no-repeat;
-  background-position: center;
+  background: url('../img/ring2.png')no-repeat center / cover;
 }
 
 .gnb > ul > li:nth-child(2) .submenu li:nth-child(3){
-  background: url('../img/ring3.png')no-repeat;
-  background-position: center;
+  background: url('../img/ring3.png')no-repeat center / cover;
 }
 
 /* 팔찌 */
 .gnb > ul > li:nth-child(3) .submenu li:first-child{
-  background: url('../img/bra1.png')no-repeat;
-  background-position: center;
+  background: url('../img/bra1.png')no-repeat center / cover;
 }
 
 .gnb > ul > li:nth-child(3) .submenu li:nth-child(2){
-  background: url('../img/bra2.png')no-repeat;
-  background-position: center;
+  background: url('../img/bra2.png')no-repeat center / cover;
 }
 
 /* 귀걸이 */
 .gnb > ul > li:nth-child(4) .submenu li:first-child{
-  background: url('../img/earring1.png')no-repeat;
-  background-position: center;
+  background: url('../img/earring1.png')no-repeat center / cover;
 }
 
 .gnb > ul > li:nth-child(4) .submenu li:nth-child(2){
-  background: url('../img/earring2.png')no-repeat;
-  background-position: center;
+  background: url('../img/earring2.png')no-repeat center / cover;
 }
 
 /* 헤어핀 */
 .gnb > ul > li:nth-child(5) .submenu li:first-child{
-  background: url('../img/hair1.png')no-repeat;
-  background-position: center;
+  background: url('../img/hair1.png')no-repeat center / cover;
 }
 
 .gnb > ul > li:nth-child(5) .submenu li:nth-child(2){
-  background: url('../img/hair2.png')no-repeat;
-  background-position: center;
+  background: url('../img/hair2.png')no-repeat center / cover;
 }
 
 .gnb > ul > li:nth-child(5) .submenu li:nth-child(3){
-  background: url('../img/hair3.png')no-repeat;
-  background-position: center;
+  background: url('../img/hair3.png')no-repeat center / cover;
 }
 
 .gnb > ul > li .submenu li a {
@@ -510,11 +496,9 @@ header .customer a:last-child{
   margin: 10px 0 50px;
 }
 
-
 #social ul li {
   box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
 }
-
 
 #social .inner {
   position: relative;
@@ -522,18 +506,33 @@ header .customer a:last-child{
 
 /* swiper */
 
-.swiper-container {
-  width: 100%;
-  height: 400px !important;
+.swiper {
+  display: flex;
+  height: 400px;
 }
 
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
 
+.swiper-wrapper {
+  position: relative;
+  height: 400px;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
+}
 
 .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
-
   /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -549,15 +548,56 @@ header .customer a:last-child{
   align-items: center;
 }
 
-.swiper-slide img {
+
+/* .swiper-slide img {
   display: block;
-  width: 250px;
-  height: 100%;
   object-fit: cover;
+  margin: 0 10px;
+} */
+
+
+.swiper-pagination-clickable .swiper-pagination-bullet {
   cursor: pointer;
 }
 
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: var(--swiper-pagination-color,var(--swiper-theme-color));
+}
 
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  text-align: center;
+  transition: .3s opacity;
+  transform: translate3d(0,0,0);
+  z-index: 10;
+}
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #000;
+  opacity: .2;
+  margin: 0 4px;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 4px;
+}
 
 
 /* news_envet -------------------- */
@@ -750,7 +790,6 @@ header .customer a:last-child{
 
 
 /* footer -------------------- */
-
 footer {
   background: #333;
   border: 2px solid #333;
@@ -822,6 +861,7 @@ footer .sns_container ul li span {
   font-size: 0;
 }
 
+/* mobile---------------------- */
 @media screen and (max-width:360px) {
   
  .inner {
@@ -880,7 +920,6 @@ header .gnb {
   align-items: flex-start;
   transition: all .4s;
 }
-
 
 .gnb.active {
   right: 0;
@@ -1038,11 +1077,10 @@ margin: 0 5px;
  }
 
  /* social ----- */
-.swiper-slide {
-   border:  2px solid green;
-   width: 350px !important;
-   position: relative;
+ .swiper-pagination {
+   transform: translateX(-50%);
  }
+
 
 
  /* news & event ----- */
