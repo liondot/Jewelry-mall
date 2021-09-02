@@ -6,7 +6,9 @@
 /* FontAwesome 4.7 CDN */
 /* @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'); */
 
-
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   padding: 0;
@@ -44,7 +46,7 @@ header {
   background: rgb(255, 255, 255);
   position: fixed;
   width: 100%;
-  height: 60px;
+  height: 90px;
   z-index: 900;
 }
 
@@ -63,15 +65,47 @@ header.active {
 header .inner {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   height: inherit;
 }
 
 header .logo {
   display: flex;
-  align-items: center;
+  padding-bottom: 18px;
+  align-items: flex-end;
   flex: 1;
   height: inherit;
+}
+
+header .navigation {
+  background: #e0e0e0;
+  width: 100%;
+  height: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+
+header .navigation ul {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  line-height: 30px;
+}
+
+header .navigation ul li {
+  margin: 0 20px;
+}
+
+header .navigation ul li:last-child{
+  margin: 0;
+}
+
+header .navigation ul li:hover {
+  font-weight: bold;
 }
 
 header .gnb {
@@ -259,7 +293,7 @@ header .color_bg {
 
 .gnb:hover + .color_bg {
   opacity: 1; 
-  height: 300px; 
+  height: 330px; 
 }
 
 header .customer {
@@ -267,7 +301,9 @@ header .customer {
   flex: 1;
   height: inherit;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-end;
+  padding-bottom: 20px;
+
 }
 
 header .customer a:last-child{
@@ -547,13 +583,6 @@ header .customer a:last-child{
   -webkit-align-items: center;
   align-items: center;
 }
-
-
-/* .swiper-slide img {
-  display: block;
-  object-fit: cover;
-  margin: 0 10px;
-} */
 
 
 .swiper-pagination-clickable .swiper-pagination-bullet {
@@ -936,6 +965,43 @@ header .gnb {
   display: inline-block;
   height: auto;
   display: block;
+  text-align: left;
+  text-indent: 80px;
+}
+.gnb > ul > li > a{
+  /* color: transparent; */
+  position: relative;
+}
+
+.gnb > ul > li > a:after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 40px;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 40px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  z-index: 200;
+  margin: 2px;
+}
+
+.gnb > ul > li:first-child > a:after{
+  background: url('../img/icon/necklace.png') no-repeat center / cover;
+}
+.gnb > ul > li:nth-child(2) > a:after{
+  background: url('../img/icon/wedding-ring.png') no-repeat center / cover;
+}
+.gnb > ul > li:nth-child(3) > a:after{
+  background: url('../img/icon/bracelet.png') no-repeat center / cover;
+}
+.gnb > ul > li:nth-child(4) > a:after{
+  background: url('../img/icon/earring.png') no-repeat center / cover;
+}
+.gnb > ul > li:nth-child(5) > a:after{
+  background: url('../img/icon/two-hairpins.png') no-repeat center / cover;
 }
 
 .gnb > ul > li:after {
@@ -957,23 +1023,6 @@ header .gnb {
   display: block;
 }
 
-.gnb > ul > li > a:after {
-  content:'\f107';
-  font-family: fontawesome;
-  position: absolute;
-  right: 30px;
-  color: #333;
-  display: inline-block;
-  font-size: 22px;
-  font-weight: bold;
-  line-height: 50px;
-}
-
-.gnb > ul > li > a.active:after {
-  color: crimson;
-  transform: rotate(180deg);
-}
-
 .gnb > ul > li .submenu {
   display: none;
 }
@@ -984,11 +1033,13 @@ header .gnb {
 
 .gnb > ul > li .mobile li { 
   width: 100%;
-  height: 40px;
-  line-height: 40px;
+  line-height: 30px;
   background: #eee;
   border-bottom: 2px solid #fff;
+  text-indent: 30px;
 }
+
+
 
 .gnb > ul > li .mobile li:hover {
   font-weight: bold;
@@ -1016,12 +1067,50 @@ header {
 }
 
 header .logo {
-  justify-content: center;
-  position: absolute;
-  z-index: 999;
-  left: 50%;
-  top: 0;
+  padding-bottom: 10px;
+  padding-left: 10px;
 }
+
+header .logo.active {
+  position: absolute;  
+  right: 10px;
+  bottom: -650px;
+  z-index: 200;
+  padding: 0;
+  transition: all .7s;
+}
+
+header .navigation {
+  transition: left .4s;
+  left: 100%;
+  background: #eeeeee75;
+}
+
+header .navigation.active {
+  /* display: none; */
+  position: absolute;
+  left: 83%;
+  height: auto;
+  width: 80px;
+  z-index: 180;
+}
+
+header .navigation ul {
+  display: block;
+  margin-top: 50px;
+}
+
+header .navigation ul li {
+  margin: 0;
+  height: 40px;
+  font-size: 14px;
+  text-align: start;
+  padding-left: 5px;
+  line-height: 40px;
+  border-bottom: 1px solid #333;
+  font-size: 10px;
+}
+
 
 header .customer {
   position: absolute;
